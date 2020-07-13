@@ -1,0 +1,4 @@
+/* to debug with default amgular validation -- .ng-invalid:not(form).ng-touched { */
+.field-error {
+  border: 1px solid red;
+}

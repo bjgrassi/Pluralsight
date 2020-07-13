@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserSettings } from '../data/user-settings';
+import { NgForm, NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-user-settings-form',
@@ -9,11 +10,11 @@ import { UserSettings } from '../data/user-settings';
 export class UserSettingsFormComponent implements OnInit {
 
   originalUserSettings: UserSettings = {
-    name: 'Milton',
-    emailOffers: true,
-    interfaceStyle: "dark",
-    subcriptionType: "Annual",
-    notes: "here are some notes..."
+    name: null,
+    emailOffers: null,
+    interfaceStyle: null,
+    subcriptionType: null,
+    notes: null
   };
 
   //Protecting data. EX: user navigates to other page or hit the cancel button
@@ -24,4 +25,11 @@ export class UserSettingsFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onBlur(field: NgModel) {
+    console.log('onBlur: ', field.valid)
+  }
+
+  onSubmit(form: NgForm) {
+    console.log("onSubmit: ", form.valid)
+  }
 }

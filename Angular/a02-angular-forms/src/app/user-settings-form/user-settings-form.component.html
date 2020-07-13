@@ -1,9 +1,23 @@
 <div class="container">
   <h2>User Settings</h2>
-  <form #form="ngForm">
+  <!-- to debug with default browsers validation -- <form #form="ngForm" ngNativeValidate> -->
+  
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
     <div class="form-group">
       <label for="name">Name</label>
-      <input id="name" name="name" class="form-control" [(ngModel)]="userSettings.name">
+      <input id="name" name="name" class="form-control" [(ngModel)]="userSettings.name"
+        required #nameField="ngModel" [class.field-error]="form.submitted && nameField.invalid"
+        (blur)="onBlur(nameField)">
+      <!-- to debug with default amgular validation -- [hidden]="nameField.valid || nameField.untouched -->
+
+      <div [hidden]="!form.submitted || nameField.valid" class="alert alert-danger">Enter a name</div>
+
+      <!-- <h3>dirty: {{ nameField.dirty }}</h3>
+      <h3>pristine: {{ nameField.pristine }}</h3>
+      <h3>touched: {{ nameField.touched }}</h3>
+      <h3>untouched: {{ nameField.untouched }}</h3>
+      <h3>valid: {{ nameField.valid }}</h3>
+      <h3>invalid: {{ nameField.invalid }}</h3> -->
     </div>
     
     <div class="form-check form-group">
@@ -52,10 +66,10 @@
     <button type="submit" class="btn btn-primary">Send</button>
   </form>
 
-  <!-- Great way to test if html data is working -->
+  <!-- Great way to debug if html data is working. Just put ngModel on correct places -->
   <!-- <h3>{{ form.value | json }}</h3> -->
-  
-  <!-- test if ts data is working -->
+
+  <!-- debug if ts data is working -->
   <h3>{{ userSettings | json }}</h3>
   <h3>{{ originalUserSettings | json }}</h3>
 </div>
