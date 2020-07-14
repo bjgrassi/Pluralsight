@@ -20,6 +20,12 @@ export class UserSettingsFormComponent implements OnInit {
     notes: null
   };
 
+  singleModel = "On";
+  startDate: Date;
+  startTime: Date;
+  userRating = 0;
+  maxRating = 10;
+
   //Protecting data. EX: user navigates to other page or hit the cancel button
   userSettings: UserSettings = { ...this.originalUserSettings };
   postError = false;
@@ -30,6 +36,9 @@ export class UserSettingsFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.subscriptionTypes = this.dataService.getSubscriptionTypes();
+
+    this.startDate = new Date();
+    this.startTime = new Date();
   }
 
   onBlur(field: NgModel) {
