@@ -1,19 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+
 import {
   EventsListComponent,
   EventTumbnailComponent,
   EventService,
   EventDetailsComponent,
   CreateEventComponent,
-  EventRouteActivatorService,
   EventsListResolverService,
   CreateSessionComponent,
   SessionListComponent,
   DurationPipe,
   VoterService,
-  LocationValidatorDirective
+  LocationValidatorDirective,
+  EventResolverService
 } from './events/index';
 import { EventsAppComponent } from './events-app.component';
 import { NavbarComponent } from './nav/navbar.component';
@@ -56,13 +58,14 @@ let jQuery = window['$']
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
   providers: [
     EventService,
     { provide: TOASTR_TOKEN, useValue: toastr },
     { provide: JQ_TOKEN, useValue: jQuery },
-    EventRouteActivatorService,
+    EventResolverService,
     EventsListResolverService,
     VoterService,
     { provide: 'canDeactivateCreateEvent', useValue: checkDirtyState },
