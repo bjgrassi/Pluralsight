@@ -27,14 +27,14 @@ import {
   SimpleModalComponent,
   ModalTriggerDirective,
   UpvoteComponent
-} from "./common/index";
+} from './common/index';
 import { appRoutes } from './routes';
 import { Error404Component } from './error/404.component';
 import { AuthService } from './user/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-let toastr: Toastr = window['toastr']
-let jQuery = window['$']
+const toastr: Toastr = window['toastr'];
+const jQuery = window['$'];
 
 @NgModule({
   declarations: [
@@ -76,7 +76,8 @@ let jQuery = window['$']
 export class AppModule { }
 
 export function checkDirtyState(component: CreateEventComponent) {
-  if(component.isDirty)
-    return window.confirm('Do you really want to cancel?')
-  return true
+  if (component.isDirty) {
+    return window.confirm('Do you really want to cancel?');
+  }
+  return true;
 }

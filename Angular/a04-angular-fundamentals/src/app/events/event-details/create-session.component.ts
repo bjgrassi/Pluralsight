@@ -15,8 +15,8 @@ import { ISession, restrictedWords } from '../shared';
   `]
 })
 export class CreateSessionComponent implements OnInit {
-  @Output() saveNewSession = new EventEmitter()
-  @Output() cancelAddSession = new EventEmitter()
+  @Output() saveNewSession = new EventEmitter();
+  @Output() cancelAddSession = new EventEmitter();
 
   newSessionForm: FormGroup;
   name: FormControl;
@@ -26,15 +26,15 @@ export class CreateSessionComponent implements OnInit {
   abstract: FormControl;
 
   ngOnInit() {
-    this.name = new FormControl('', Validators.required)
-    this.presenter = new FormControl('', Validators.required)
-    this.duration = new FormControl('', Validators.required)
-    this.level = new FormControl('', Validators.required)
+    this.name = new FormControl('', Validators.required);
+    this.presenter = new FormControl('', Validators.required);
+    this.duration = new FormControl('', Validators.required);
+    this.level = new FormControl('', Validators.required);
     this.abstract = new FormControl('', [
       Validators.required,
       Validators.maxLength(400),
-      restrictedWords(['foo', 'bar']) //the function
-    ])
+      restrictedWords(['foo', 'bar']) // the function
+    ]);
 
     this.newSessionForm = new FormGroup({
       name: this.name,
@@ -43,11 +43,11 @@ export class CreateSessionComponent implements OnInit {
       level: this.level,
       abstract: this.abstract
 
-    })
+    });
   }
 
   saveSession(formValues) {
-    let session: ISession = {
+    const session: ISession = {
       id: undefined,
       name: formValues.name,
       presenter: formValues.presenter,
@@ -55,11 +55,11 @@ export class CreateSessionComponent implements OnInit {
       level: formValues.level,
       abstract: formValues.abstract,
       voters: []
-    }
-    this.saveNewSession.emit(session)
+    };
+    this.saveNewSession.emit(session);
   }
 
   cancel() {
-    this.cancelAddSession.emit()
+    this.cancelAddSession.emit();
   }
 }

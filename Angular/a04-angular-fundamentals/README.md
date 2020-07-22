@@ -1,4 +1,8 @@
-# A04AngularFundamentals
+# [Angular Fundamentals](https://app.pluralsight.com/library/courses/angular-fundamentals/table-of-contents)
+  ### by Joe Eames and Jim Cooper | Intermediate
+***
+# run npm server (Terminal 1) and npm start (Terminal 2)
+***
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.2.
 

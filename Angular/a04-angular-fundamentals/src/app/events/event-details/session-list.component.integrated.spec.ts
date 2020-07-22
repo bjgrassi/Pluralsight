@@ -13,16 +13,16 @@ describe('SessionListComponent', () => {
   let fixture: ComponentFixture<SessionListComponent>,
       component: SessionListComponent,
       element: HTMLElement,
-      debugEl: DebugElement
+      debugEl: DebugElement;
 
   beforeEach(async(() => {
-    let mockAuthService = {
+    const mockAuthService = {
       isAuthenticated: () => true,
       currentUser: { userName: 'Joe' }
-    }
-    let mockVoterService = {
+    };
+    const mockVoterService = {
       userHasVoted: () => true
-    }
+    };
 
     TestBed.configureTestingModule({
       imports: [],
@@ -37,9 +37,9 @@ describe('SessionListComponent', () => {
         { provide: VoterService, useValue: mockVoterService }
       ],
       schemas: [
-        NO_ERRORS_SCHEMA //ignores the angular's need to declare components
+        NO_ERRORS_SCHEMA // ignores the angular's need to declare components
       ]
-    })
+    });
   }));
 
   beforeEach(() => {
@@ -52,7 +52,7 @@ describe('SessionListComponent', () => {
   describe('inicial display', () => {
     it('should have the correct session title', () => {
       component.sessions = [{ id: 3, name: 'Session 1', presenter: 'Joe', duration: 1,
-      level: 'begginer', abstract: 'abstract', voters: ['john', 'bob']}]
+      level: 'begginer', abstract: 'abstract', voters: ['john', 'bob']}];
       component.filterBy = 'all';
       component.sortBy = 'name';
       component.eventId = 4;
@@ -62,7 +62,7 @@ describe('SessionListComponent', () => {
 
       // expect(element.querySelector('[well-title]').textContent).toContain('Session 1')
       // or
-      expect(debugEl.query(By.css('[well-title]')).nativeElement.textContent).toContain('Session 1')
-    })
-  })
-})
+      expect(debugEl.query(By.css('[well-title]')).nativeElement.textContent).toContain('Session 1');
+    });
+  });
+});
