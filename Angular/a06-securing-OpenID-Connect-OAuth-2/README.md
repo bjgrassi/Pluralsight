@@ -1,3 +1,6 @@
+# [Securing Angular Apps with OpenID Connect and OAuth 2](https://app.pluralsight.com/library/courses/openid-and-oauth2-securing-angular-apps/table-of-contents)
+  ### by Brian Noyes | Intermediate
+
 # SecuringAngularClient
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
