@@ -1,6 +1,5 @@
-# APM-Demo0
-
-Starter files with no NgRx added.
+# [Angular NgRx: Getting Started](https://app.pluralsight.com/library/courses/angular-ngrx-getting-started/table-of-contents)
+  ### by Duncan Hunter and Deborah Kurata | Beginner
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.3.
 
