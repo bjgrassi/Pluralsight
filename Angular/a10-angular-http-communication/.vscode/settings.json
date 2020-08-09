@@ -23,7 +23,9 @@
   "editor.selectionHighlight": false,
   "editor.suggestOnTriggerCharacters": true,
 
-  "window.zoomLevel": 1,
+  "problems.decorations.enabled": false,
+
+  "window.zoomLevel": 0,
   
   "terminal.integrated.fontSize": 16,
 
