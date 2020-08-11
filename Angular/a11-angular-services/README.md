@@ -1,6 +1,8 @@
 # [Angular Services](https://app.pluralsight.com/library/courses/angular-services/table-of-contents)
   ### by Brice Wilson | Intermediate
 
+- to start the app: `npm start`
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.0.
 
 ## Development server
