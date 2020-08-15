@@ -16,7 +16,7 @@ export class FilterClassesService {
   }
 
   showOnlyGeneralCourses(classes) {
-    classes.filter(c =>
+    return classes.filter(c =>
       !c.course.courseNumber.startsWith('CH') &&
       !c.course.courseNumber.startsWith('PO') &&
       !c.course.courseNumber.startsWith('SP'));
